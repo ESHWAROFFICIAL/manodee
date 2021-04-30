@@ -1,0 +1,438 @@
+
+<div class="c-player c-player--hide"></div>
+
+<div class="c-custom">
+ <ul class="c-palette">
+  <li class="c-palette__color"><label for="" class="c-color c-color--red"><input type="radio" class="c-color__input" name="colors" value="RED"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--orange"><input type="radio" class="c-color__input" name="colors" value="ORANGE"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--brown"><input type="radio" class="c-color__input" name="colors" value="BROWN"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--yellow"><input type="radio" class="c-color__input" name="colors" value="YELLOW"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--lime"><input type="radio" class="c-color__input" name="colors" value="LIME"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--green"><input type="radio" class="c-color__input" name="colors" value="GREEN"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--cyan"><input type="radio" class="c-color__input" name="colors" value="CYAN"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--blue"><input type="radio" class="c-color__input" name="colors" value="BLUE"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--pink"><input type="radio" class="c-color__input" name="colors" value="PINK"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--purple"><input type="radio" class="c-color__input" name="colors" value="PURPLE"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--black"><input type="radio" class="c-color__input" name="colors" value="BLACK"></label></li>
+  <li class="c-palette__color"><label for="" class="c-color c-color--white"><input type="radio" class="c-color__input" name="colors" value="WHITE"></label></li>
+ </ul>
+</div>
+
+
+
+
+
+html
+
+
+
+
+
+$player: ".c-player";
+$color: ".c-color";
+$palette: ".c-palette";
+$custom: ".c-custom";
+
+html,
+body {
+ height: 100vh;
+ width: 100vw;
+ overflow: hidden;
+
+ padding: 0;
+ margin: 0;
+
+ background: #{$field-background};
+
+ box-shadow: inset 0 0 0 5px #101818, inset 0 0 0 15px #293031,
+  inset 0 0 0 20px #101818, inset 0 80px 0 0 #548491, inset 0 140px 0 0 #89445a,
+  inset 0 145px 0 0 #181c21;
+
+ // TODO: Convert svg background to linear gradient composition
+
+ &:before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 150px);
+  height: 90px;
+  top: 30px;
+  left: 50%;
+  transform: translatex(-50%);
+  background: linear-gradient(
+    to right,
+    transparent 0 12px,
+    #101818 12px 15px,
+    #31494a 15px 18px,
+    #101818 18px 21px,
+    transparent 21px 100%
+   ),
+   linear-gradient(to bottom, #a4cce6 0% 75%, #6392ad 75% 100%);
+
+  background-position: center center, left top;
+  background-size: 145px 6px, 100% 100%;
+
+  box-shadow: inset 0 0 0 5px #31494a, inset 0 0 0 10px #101818;
+  border: 5px solid #101818;
+ }
+}
+
+#{$player} {
+ --x: 0;
+ --y: 0;
+ --sprite-idle: #{$player-background} no-repeat center bottom;
+ --sprite-walking: #{$player-walking-background} no-repeat center bottom;
+ --sprite-hat: #{$player-hat} no-repeat 12px 35px;
+ position: relative;
+ width: 85px;
+ height: 150px;
+ transform: translate(var(--x), var(--y));
+ transition: opacity .3s ease-in-out;
+
+ &:before,
+ &:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: block;
+ }
+
+ &:before {
+  background: var(--sprite-idle);
+ }
+
+ &:after {
+  background: var(--sprite-hat);
+ }
+
+ &--walking:before {
+  background: var(--sprite-walking);
+  animation: PlayerWalking 0.8s steps(12) infinite;
+ }
+
+ &--walking:after {
+  animation: HatWalking 0.8s step-start infinite;
+ }
+
+ &--turn-left {
+  &:before,
+  &:after {
+   transform: scalex(-1);
+  }
+ }
+
+ &--hide {
+  opacity: 0;
+ }
+}
+
+@keyframes PlayerWalking {
+ from {
+  background-position-x: 0px;
+ }
+ to {
+  background-position-x: -1020px;
+ }
+}
+
+@keyframes HatWalking {
+ 0%,
+ 100% {
+  background-position: 12px 30px;
+ }
+
+ 25%,
+ 75% {
+  background-position: 12px 25px;
+ }
+
+ 50% {
+  background-position: 12px 30px;
+ }
+}
+
+#{$color} {
+ --base: var(--color-cyan-base);
+ --shadow: var(--color-cyan-shadow);
+ height: 2rem;
+ width: 2rem;
+ border: 3px solid #000;
+ border-radius: 8px;
+ display: block;
+ overflow: hidden;
+ position: relative;
+
+ &:after,
+ &:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  height: calc(100% + 8px);
+  width: calc(100% + 8px);
+  border-radius: 16px;
+  cursor: pointer;
+ }
+
+ &:after {
+  background-color: var(--base);
+  transform: translatey(-32.5%);
+ }
+
+ &:before {
+  background-color: var(--shadow);
+ }
+
+ &__input {
+  width: 0;
+  height: 0;
+ }
+
+ &--red {
+  --base: #f31717;
+  --shadow: #880934;
+ }
+ &--orange {
+  --base: #f07d0d;
+  --shadow: #b43e15;
+ }
+ &--brown {
+  --base: #71491e;
+  --shadow: #5e2615;
+ }
+ &--yellow {
+  --base: #fbfb59;
+  --shadow: #c38822;
+ }
+ &--lime {
+  --base: #50f039;
+  --shadow: #15a842;
+ }
+ &--green {
+  --base: #11802d;
+  --shadow: #0a4d2e;
+ }
+ &--cyan {
+  --base: #38ffdd;
+  --shadow: #24a9bf;
+ }
+ &--blue {
+  --base: #132ed1;
+  --shadow: #09158e;
+ }
+ &--pink {
+  --base: #ee54bb;
+  --shadow: #ac2bae;
+ }
+ &--purple {
+  --base: #6b2fbc;
+  --shadow: #3b177c;
+ }
+ &--black {
+  --base: #3f474e;
+  --shadow: #1e1f26;
+ }
+ &--white {
+  --base: #d7e1f1;
+  --shadow: #8495c0;
+ }
+}
+
+#{$palette} {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ display: grid;
+ grid-template: auto / 1fr 1fr;
+ gap: .5rem;
+}
+
+
+#{$custom} {
+ position: fixed;
+ top: 50%;
+ left: 15px;
+ transform: translatey(-50%);
+ background-color: #293031;
+ border: 5px solid #101818;
+ border-left: 0;
+ padding: .5rem;
+ border-radius: 0 4px 4px 0;
+}
+
+
+
+
+
+css
+
+
+
+
+
+class Player {
+ constructor($dom, limits) {
+  
+  this.$player = $dom;
+  this.playerBounds = this.$player.getBoundingClientRect();
+  this.lastMovement = Date.now();
+  this.axisX = (window.innerWidth / 2) - (this.playerBounds.width / 2);
+  this.axisY = (window.innerHeight / 2) - (this.playerBounds.height / 2);
+  this.limits = limits;
+  this.keys = { top: false, right: false, down: false, left: false};
+  
+  window.addEventListener("keydown", (ev) => this.handleKeydown(ev), false);
+  window.addEventListener("keyup", (ev) => this.handleKeyup(ev), false);
+  
+  this.walk(this.axisX, this.axisY);
+  setTimeout(() => this.loop(), 24);
+ }
+
+ setLimits(limits) {
+  this.limits = limits;
+ }
+ 
+ loop() {
+  
+  if (this.keys.left && (this.axisX - 10) > this.limits.xStart) {
+   this.setWalking();
+   this.setTurnLeft(true);
+   this.walk(this.axisX - 10, this.axisY);
+  }
+
+  if (this.keys.right && (this.axisX + this.playerBounds.width + 10) < this.limits.xEnd) {
+   this.setWalking();
+   this.setTurnLeft(false);
+   this.walk(this.axisX + 10, this.axisY);
+  }
+
+  if (this.keys.down && (this.axisY + this.playerBounds.height + 10) < this.limits.yEnd) {
+   this.setWalking();
+   this.walk(this.axisX, this.axisY + 10);
+  }
+
+  if (this.keys.up && (this.axisY - 10) > this.limits.yStart) {
+   this.setWalking();
+   this.walk(this.axisX, this.axisY - 10);
+  }
+  
+  //if(Date.now() - this.lastMovement > 50) this.setWalking(false);
+  
+  setTimeout(() => this.loop(), 24);
+ }
+
+ handleKeydown(ev) {  
+  switch (ev.code) {
+   case "ArrowLeft":
+   case "KeyA":
+    this.keys.left = true;
+    break;
+   case "ArrowRight":
+   case "KeyD":
+    this.keys.right = true;
+    break;
+   case "ArrowDown":
+   case "KeyS":
+    this.keys.down = true;
+    break;
+   case "ArrowUp":
+   case "KeyW":
+    this.keys.up = true;
+    break;
+  }
+ }
+
+ walk(x, y) {
+  this.axisX = x;
+  this.axisY = y;
+  this.$player.style.setProperty("--x", this.axisX + "px");
+  this.$player.style.setProperty("--y", this.axisY + "px");
+  this.lastMovement = Date.now();
+ }
+
+ handleKeyup(ev) {
+  this.setWalking(false);
+  
+  switch (ev.code) {
+   case "ArrowLeft":
+   case "KeyA":
+    this.keys.left = false;
+    break;
+   case "ArrowRight":
+   case "KeyD":
+    this.keys.right = false;
+    break;
+   case "ArrowDown":
+   case "KeyS":
+    this.keys.down = false;
+    break;
+   case "ArrowUp":
+   case "KeyW":
+    this.keys.up = false;
+    break;
+  }
+ }
+ 
+ checkPosition() {
+  if(this.axisX < this.limits.xStart) this.walk(this.limits.xStart, this.axisY);
+  if(this.axisY < this.limits.yStart) this.walk(this.axisX, this.limits.yStart);
+  
+  if((this.axisX + this.playerBounds.width) > this.limits.xEnd) this.walk(this.limits.xEnd - this.playerBounds.width, this.axisY);
+  if((this.axisY + this.playerBounds.height) > this.limits.yEnd) this.walk(this.axisX, this.limits.yEnd - this.playerBounds.height);
+ }
+ 
+ setWalking(state = true) {
+  this.$player.classList.toggle("c-player--walking", state);
+ }
+
+ setTurnLeft(state = true) {
+  this.$player.classList.toggle("c-player--turn-left", state);
+ }
+ 
+ setColor(color = 'CYAN'){
+  this.$player.style.setProperty("--sprite-idle", 'url("' + AssetAssembler.getPlayer('IDLE', color) + '") no-repeat center bottom');
+  this.$player.style.setProperty("--sprite-walking", 'url("' + AssetAssembler.getPlayer('WALKING', color) + '") no-repeat center bottom');
+ }
+ 
+ show() {
+  this.$player.classList.toggle("c-player--hide", false);
+ }
+}
+
+let $player = document.querySelector(".c-player");
+
+let limits = document.body.getBoundingClientRect();
+
+limits.xStart = limits.x + 120;
+limits.yStart = limits.y + 20;
+limits.xEnd = limits.width - 20;
+limits.yEnd = limits.height - 20;
+
+let player = new Player($player, limits);
+
+window.addEventListener('load', () => player.show());
+
+window.addEventListener('resize', () => {
+ let limits = document.body.getBoundingClientRect();
+
+ limits.xStart = limits.x + 120;
+ limits.yStart = limits.y + 20;
+ limits.xEnd = limits.width - 20;
+ limits.yEnd = limits.height - 20;
+ 
+ player.setLimits(limits);
+ player.checkPosition();
+})
+
+document
+ .querySelectorAll('.c-color')
+ .forEach( el => el.addEventListener('click', (ev) => player.setColor(ev.target.querySelector('.c-color__input')
+ .value), false))
+ 
+ 
+ 
+ 
+ 
+ 
+ js
