@@ -1,0 +1,792 @@
+.background
+  each _ in Array(5)
+    span
+.cloud
+  each _ in Array(8)
+    span
+//- .fps
+//- .rain-count
+.reset Reset
+//- .debug Debug
+.title mouse moves cloud ° click to rain ° FLOOD the VALLEY
+.ground-grid
+
+
+
+
+
+html pug
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap");
+
+$ground: #481d13;
+$density: 3.33vw;
+$water: lighten(blue, 10%);
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #cfe3f1;
+}
+
+.title {
+  user-select: none;
+  position: absolute;
+  font-family: "Major Mono Display", monospace;
+  color: $water;
+  top: 16px;
+  left: 16px;
+  right: 100px;
+  font-size: 22px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-spacing: -5px;
+  letter-spacing: -1.5px;
+  padding-bottom: 15px;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    opacity: 0.25;
+    left: 0px;
+    height: 3px;
+    width: 87px;
+    background: $water;
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+
+  span {
+    width: 35vw;
+    height: 35vw;
+    background: linear-gradient(
+      135deg,
+      rgb(181 189 200 / 94%) 0%,
+      #769cbd 36%,
+      #126b2e 100%
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(45deg) translateY(50%);
+    border-radius: 40px;
+
+    &:nth-of-type(2) {
+      left: 25%;
+    }
+
+    &:nth-of-type(3) {
+      left: 50%;
+    }
+
+    &:nth-of-type(4) {
+      left: 75%;
+    }
+
+    &:nth-of-type(5) {
+      left: 100%;
+    }
+  }
+}
+
+.fps {
+  position: absolute;
+  top: 110px;
+  right: 10px;
+  font: 400 16px/1 sans-serif;
+}
+
+.rain-count {
+  position: absolute;
+  top: 135px;
+  right: 10px;
+  font: 400 16px/1 sans-serif;
+}
+
+.reset,
+.debug {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font: 400 16px/1 sans-serif;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+.debug {
+  top: 60px;
+}
+
+.raindrop {
+  position: absolute;
+  top: 0px;
+  width: 2px;
+  height: 5px;
+  background: $water;
+  transform: translateY(150px);
+  z-index: 0;
+}
+
+.ground-grid {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  &__block {
+    width: $density;
+    padding-top: $density;
+    // border: 1px dashed black;
+    box-sizing: border-box;
+    position: relative;
+
+    &--water {
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $water;
+
+        &:not([style="height:0%"])::before,
+        &:not([style="height:0%"])::after {
+          content: "";
+          position: absolute;
+          z-index: 0;
+          background: $water;
+          top: 0;
+          right: 90%;
+          height: 3vw;
+          width: 1vw;
+          border-radius: 15px;
+        }
+        &:not([style="height:0%"])::after {
+          right: auto;
+          left: 90%;
+        }
+      }
+
+      &.heavyWater {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          height: 2vw;
+          background: $water;
+        }
+      }
+    }
+
+    &--dirt,
+    &--leftRound,
+    &--rightRound {
+      background: $ground;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: $ground;
+        top: 0;
+        left: 0;
+        border-radius: 15px 0 0 0;
+      }
+    }
+
+    &--leftRound {
+      border-radius: 15px 0 0 0;
+
+      &.spillage {
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          background: $water;
+          top: -2px;
+          left: -2px;
+          border-radius: 15px 0 0 0;
+        }
+      }
+    }
+
+    &--rightRound {
+      border-radius: 0 15px 0 0;
+
+      &::after {
+        border-radius: 0 15px 0 0;
+      }
+
+      &.spillage {
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: $water;
+          right: -2px;
+          top: -2px;
+          border-radius: 0 15px 0 0;
+        }
+      }
+    }
+
+    &--rightSlope {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5vw 0 0 5vw;
+        border-color: transparent transparent transparent $ground;
+      }
+    }
+
+    &--leftSlope {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 5vw 5vw;
+        border-color: transparent transparent $ground transparent;
+      }
+    }
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  cursor: pointer;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 70px;
+    height: 30px;
+    top: 27px;
+    left: 22px;
+  }
+
+  span {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    background: white;
+    box-shadow: 0px 0px 4px rgba(black, 0.1);
+
+    &:nth-of-type(1) {
+      top: 25px;
+    }
+
+    &:nth-of-type(2) {
+      width: 30px;
+      height: 30px;
+      top: 13px;
+      left: 20px;
+    }
+
+    &:nth-of-type(3) {
+      left: 40px;
+    }
+
+    &:nth-of-type(4) {
+      width: 30px;
+      height: 30px;
+      top: 12px;
+      left: 67px;
+    }
+
+    &:nth-of-type(5) {
+      width: 30px;
+      height: 30px;
+      top: 30px;
+      left: 80px;
+    }
+
+    &:nth-of-type(6) {
+      width: 23px;
+      height: 23px;
+      left: 24px;
+      top: 45px;
+    }
+
+    &:nth-of-type(7) {
+      width: 35px;
+      height: 35px;
+      left: 38px;
+      top: 38px;
+    }
+
+    &:nth-of-type(8) {
+      left: 60px;
+      top: 40px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+
+
+
+
+
+scss
+
+
+
+
+
+let rows = [
+  [
+    0,
+    0,
+    0,
+    5,
+    6,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5
+  ],
+  [
+    6,
+    0,
+    5,
+    4,
+    4,
+    6,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5,
+    4
+  ],
+  [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5,
+    4,
+    4,
+    4
+  ],
+  [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    0,
+    5,
+    6,
+    0,
+    0,
+    5,
+    4,
+    6,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4,
+    4,
+    4,
+    4
+  ],
+  [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    0,
+    5,
+    4,
+    6,
+    0,
+    0,
+    0,
+    5,
+    4,
+    4,
+    4,
+    4
+  ]
+];
+const rowsBackup = JSON.parse(JSON.stringify(rows));
+const cloudW = 110;
+const density = 0.0333;
+const maxDroplets = 80;
+let raining = false;
+const times = [];
+const rainSpeed = 7;
+const rainIncrease = 0.025;
+const spreadIncrement = 0.01; // how fast the water spreads
+const spreadCutoff = 0.01; // determines when the water should consider itself "equalized"
+let reset = false;
+let fps;
+
+$(".reset").on("click", function (e) {
+  reset = true;
+});
+
+$(".debug").on("click", function () {
+  console.log(rows);
+});
+
+$(document).on("mousemove", function (e) {
+  $(".cloud").css("left", e.pageX);
+});
+
+$(document).on("mousedown", function () {
+  raining = true;
+});
+
+$(document).on("mouseup", function () {
+  raining = false;
+});
+
+function mainLoop() {
+  if (reset) {
+    console.log("resetting flood...");
+    rows = JSON.parse(JSON.stringify(rowsBackup));
+    $(".raindrop").remove();
+    reset = false;
+  } else {
+    if (raining && $(".raindrop").length < maxDroplets) {
+      addDrop();
+    }
+    moveDrops();
+    calcDrops();
+    spreadWater();
+  }
+  calcFPS();
+  drawRows();
+  requestAnimationFrame(mainLoop);
+}
+requestAnimationFrame(mainLoop);
+
+function moveDrops() {
+  const screenH = $(window).outerHeight();
+  const screenW = $(window).outerWidth();
+  $(".raindrop").each(function () {
+    const currY = $(this).offset().top;
+    const newY = currY + rainSpeed;
+    const dropCol = parseInt($(this).data("col"));
+    const colHeight = getColHeight(dropCol);
+    if (newY > screenH - colHeight * (screenW * density)) {
+      let emptyRow = -1;
+      $.each(rows.slice().reverse(), function (index, row) {
+        if (row[dropCol] < 1) {
+          emptyRow = rows.length - 1 - index;
+          return false;
+        }
+      });
+      if (emptyRow > -1) {
+        rows[emptyRow][dropCol] = Math.min(
+          1,
+          rows[emptyRow][dropCol] + rainIncrease
+        );
+      }
+      $(this).remove();
+    } else {
+      $(this).css("transform", "translateY(" + newY + "px)");
+    }
+  });
+}
+
+function addDrop() {
+  const xRand = Math.random() * cloudW;
+  const cloudLeft = $(".cloud").offset().left;
+  const rainPos = cloudLeft + xRand;
+  const winW = $(window).outerWidth();
+  const colSector = Math.floor((rainPos / winW / 3.33) * 100);
+  // console.log("adding raindrop to column " + colSector);
+  $("body").append('<div class="raindrop raindrop--new"></div>');
+  $(".raindrop--new")
+    .removeClass("raindrop--new")
+    .css("left", rainPos)
+    .data("col", colSector);
+}
+
+function calcFPS() {
+  const now = performance.now();
+  while (times.length > 0 && times[0] <= now - 1000) {
+    times.shift();
+  }
+  times.push(now);
+  fps = times.length;
+  $(".fps").text("FPS: " + fps);
+}
+
+function calcDrops() {
+  $(".rain-count").text("Droplets: " + $(".raindrop").length);
+}
+
+function drawRows() {
+  const grid = $(".ground-grid");
+  grid.empty();
+  $.each(rows, function (index, row) {
+    $.each(row, function (index2, col) {
+      let removeSpillage = false;
+      let newBlock = $(
+        '<div class="ground-grid__block" data-row=' +
+          index +
+          " data-col=" +
+          index2 +
+          "></div>"
+      );
+      if (col > 6) {
+        newBlock.addClass("spillage");
+        removeSpillage = true;
+      }
+      if (col == 6 || col == 8) {
+        newBlock.addClass("ground-grid__block--rightRound");
+      }
+      if (col == 5 || col == 7) {
+        newBlock.addClass("ground-grid__block--leftRound");
+      }
+      if (col == 4) {
+        newBlock.addClass("ground-grid__block--dirt");
+      }
+      if (col == 2) {
+        newBlock.addClass("ground-grid__block--rightSlope");
+      }
+      if (col == 3) {
+        newBlock.addClass("ground-grid__block--leftSlope");
+      }
+      if (col <= 1 && col > 0) {
+        const level = col * 100;
+        const heavyWater = level >= 5;
+        const drawLevel = heavyWater ? level : 0;
+        newBlock
+          .addClass("ground-grid__block--water")
+          .append(
+            "<span data-level=" +
+              level +
+              ' style="height:' +
+              (drawLevel + "%") +
+              '"></span>'
+          );
+        if (heavyWater) {
+          newBlock.addClass("heavyWater");
+        }
+      }
+      grid.append(newBlock);
+      rows[index][index2] = removeSpillage
+        ? rows[index][index2] - 2
+        : rows[index][index2];
+    });
+  });
+}
+
+function spreadWater() {
+  // remove spillage animations
+  $(".spillage").removeClass("spillage");
+  // go through each water tile and spread water
+  $(".ground-grid__block--water").each(function () {
+    const row = $(this).data("row");
+    const col = $(this).data("col");
+    const level = $(this).find("span").data("level") / 100;
+    let addBelow = false;
+    // always check block below first
+    const belowBlockVal = row != rows.length - 1 ? rows[row + 1][col] : null;
+    if (belowBlockVal !== null && belowBlockVal < 1) {
+      rows[row + 1][col] += spreadIncrement;
+      if (rows[row + 1][col] > 1) {
+        rows[row + 1][col] = 1;
+      }
+      rows[row][col] -= spreadIncrement;
+      addBelow = true;
+    }
+    // check block to the left
+    const leftBlockVal = col != 0 ? rows[row][col - 1] : null;
+    if (
+      leftBlockVal !== null &&
+      leftBlockVal < 1 &&
+      leftBlockVal < level &&
+      Math.abs(leftBlockVal - level) > spreadCutoff &&
+      !addBelow
+    ) {
+      rows[row][col] -= spreadIncrement;
+      rows[row][col - 1] += spreadIncrement;
+      if (rows[row][col - 1] > 1) {
+        rows[row][col - 1] = 1;
+      }
+      // if not falling down, add spillage below
+      if (belowBlockVal !== null && belowBlockVal != 4 && belowBlockVal != 1) {
+        rows[row + 1][col] = belowBlockVal == 5 ? 7 : 8;
+      }
+    }
+    // check block to the right
+    const rightBlockVal = col != 29 ? rows[row][col + 1] : null;
+    if (
+      rightBlockVal !== null &&
+      rightBlockVal < 1 &&
+      rightBlockVal < level &&
+      Math.abs(rightBlockVal - level) > spreadCutoff &&
+      !addBelow
+    ) {
+      rows[row][col] -= spreadIncrement;
+      rows[row][col + 1] += spreadIncrement;
+      if (rows[row][col + 1] > 1) {
+        rows[row][col + 1] = 1;
+      }
+      // if not falling down, add spillage below
+      if (belowBlockVal !== null && belowBlockVal != 4 && belowBlockVal != 1) {
+        rows[row + 1][col] = belowBlockVal == 5 ? 7 : 8;
+      }
+    }
+    // if tile is essentially empty, drain it
+    if (level < spreadIncrement) {
+      rows[row][col] = 0;
+    }
+  });
+}
+
+function getColHeight(col) {
+  let height = 0;
+  $.each(rows.slice().reverse(), function (index, row) {
+    const rowCol = row[col];
+    if (rowCol == 0) {
+      return false;
+    } else if (rowCol <= 1) {
+      height += rowCol;
+    } else {
+      height += 1;
+    }
+  });
+  return height;
+}
+
+
+
+
+
+js
