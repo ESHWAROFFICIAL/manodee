@@ -1,0 +1,193 @@
+<h1>Wanna hear something funny?</h1>
+<button id="button">Yes!</button>
+<div id="jokeContent"></div>
+<div id="joke"></div>
+<img src="https://i1.faceprep.in/prograd-junior/minion.png" alt="Minion image" id="minion">
+<p id="footer">Code your own joke generator &#10084;</p>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+
+html
+
+
+
+body {
+  background: linear-gradient(#00b4db, #325a79);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin-top: 5%;
+}
+
+#button {
+  width: 165em;
+  height: 60px;
+  color: black;
+  background-color: white;
+  font-size: 32px;
+  line-height: 50px;
+}
+
+#footer {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+#jokeContent,
+#joke {
+  font-size: 28px;
+  line-height: 35px;
+}
+
+#jokeContent,
+#minion {
+  margin-top: 5%;
+}
+
+#button:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background: linear-gradient(#00b4db, #325a79);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-top: 5%;
+  }
+
+  #button {
+    width: 165px;
+    height: 60px;
+    color: black;
+    background-color: white;
+    font-size: 32px;
+    line-height: 50px;
+  }
+
+  #footer {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  #jokeContent,
+  #joke {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  #jokeContent,
+  #minion {
+    margin-top: 5%;
+  }
+
+  #button:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    background: linear-gradient(#00b4db, #325a79);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-top: 5%;
+  }
+
+  #button {
+    width: 165px;
+    height: 60px;
+    color: black;
+    background-color: white;
+    font-size: 32px;
+    line-height: 50px;
+  }
+
+  #footer {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  #jokeContent,
+  #joke {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  #jokeContent,
+  #minion {
+    margin-top: 5%;
+  }
+
+  #button:hover {
+    cursor: pointer;
+  }
+}
+
+
+
+
+css
+
+
+
+
+
+
+const button = document.getElementById("button");
+const jokeContent = document.getElementById("jokeContent");
+const joke = document.getElementById("joke");
+
+button.onclick = () => {
+  axios
+    .get("https://official-joke-api.appspot.com/random_joke")
+    .then(function (response) {
+      button.textContent = "Next";
+      joke.textContent = "";
+      jokeContent.textContent = response.data.setup;
+      setTimeout(function () {
+        joke.textContent = response.data.punchline;
+      }, 3000);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+
+
+
+
+
+js
