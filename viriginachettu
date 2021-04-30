@@ -1,0 +1,85 @@
+<canvas id="canvas"></canvas>
+
+
+
+
+html
+
+
+
+
+body, html {
+  margin: 0;
+}
+
+canvas {
+  display: block;
+  cursor: pointer;
+}
+
+
+
+
+
+css
+
+
+
+
+
+
+let canvas;
+let ctx;
+let w, h;
+
+function setup() {
+  canvas = document.querySelector("#canvas");
+  ctx = canvas.getContext("2d");
+  resize();
+  window.addEventListener("resize", () => {
+    resize();
+    draw();
+  });
+  canvas.addEventListener("click", draw);
+}
+
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+
+function draw() {
+  let nrOfSteps = Math.random() * 10 + 8;
+  let stepLength = h * 0.9 / nrOfSteps;
+  let startAngle = Math.PI / 2 * 3;
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, w, h);
+  drawTree(w * 0.5, h * 0.95, startAngle, nrOfSteps, stepLength);
+}
+
+function drawTree(x, y, angle, nrOfStepsLeft, stepLength) {
+  if(nrOfStepsLeft < 0) return;
+  let xNew = x + Math.cos(angle) * stepLength;
+  let yNew = y + Math.sin(angle) * stepLength;
+
+  if(Math.random() > 0.6) {
+    let deltaAngle = Math.random() * 0.6;
+    drawTree(xNew, yNew, angle - deltaAngle, nrOfStepsLeft - 1, stepLength);
+    angle += deltaAngle;
+  }
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(xNew, yNew);
+  ctx.stroke();
+  drawTree(xNew, yNew, angle, nrOfStepsLeft - 1, stepLength);
+}
+
+setup();
+draw();
+
+
+
+
+
+
+js
