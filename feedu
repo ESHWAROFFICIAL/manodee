@@ -1,0 +1,766 @@
+- const STARS = 10
+- const STAR_LIMIT = 5
+//- h1 Timer!
+//- h2 Timer!
+
+- for(let s = 0; s < STARS; s++)
+  .star(data-parallax-invert=Math.random() > 0.5 data-parallax-range=Math.random() * STAR_LIMIT style=`--size: ${Math.random() * 10 + 1}; --x: ${Math.random() * 100}; --y: ${Math.random() * 100};`)
+
+input#vision(type='checkbox')
+label(for='vision', title='Toggle embed')
+  //- On
+  svg(viewBox="0 0 576 512")
+    path(d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z")
+  //- Off
+  svg(viewBox="0 0 640 512")
+    path(d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z")
+input#volume(type='checkbox')
+label(for='volume', title='Toggle sound')
+  //- On
+  svg(viewBox="0 0 24 24")
+    path(d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z")
+  //- Off
+  svg(viewBox="0 0 24 24")
+    path(d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z")
+#player
+.globe__container
+  svg.globe(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 215.667 215.667')
+    g.globe__body(transform='translate(72.685 -37.976)')
+      circle.globe__water(r='105.833' cy='145.81' cx='35.53')
+      path.globe__land(d='M-27.245 60.753a105.833 105.833 0 00-43.059 85.057 105.833 105.833 0 004.324 29.713c.67-2.487 1.11-5.618 3.13-6.005 3.955-.757 5.956 8.34 9.785 7.088 7.779-2.543 2.835-16.668 7.535-23.369 6.538-9.32-3.107.772 26.995-20.923 3.498-3.43 3.962-8.986 5.413-13.667 1.419-4.58 2.383-9.298 3.193-14.023.76-4.434 3.973-9.61 1.558-13.405-2.997-4.71-14.272.049-15.887-5.295-2.252-7.451 16.262-10.867 14.36-18.416-1.478-5.87-14.839-1.983-17.347-6.755z')
+      path.globe__land(d='M-10.925 182.332c-2.646.015-5.293.141-7.785.141-7.976 0-16.462.33-23.614 3.862-5.535 2.734-8.793 8.664-13.458 12.724a105.833 105.833 0 0091.312 52.584c.456-.013.913-.03 1.37-.049.102-.283.2-.568.288-.857 1.858-6.137-2.036-12.715-2.036-19.127 0-6.411 12.818-19.273 7.328-26.686-6.256-8.447-24.969 5.558-31.522-.878-4.452-4.371-1.29-13.683-6.054-17.711-4.188-3.54-10.009-4.038-15.83-4.003z')
+      path.globe__land(d='M39.335 40.167c-3.33 6.857-6.061 14.2-2.162 19.653 10.282 14.378 40.618-6.99 52.697 5.914 7.046 7.527-4.818 22.684 1.414 30.896 7.846 10.34 28.236 2.594 36.984 12.182 7.927 8.69-2.17 28.35 7.927 34.383 1.548.925 3.293 1.027 5.099.658A105.833 105.833 0 0039.334 40.167z')
+      path.globe__land(d='M141.044 152.179c-2.827.032-5.242 1.018-7.627 2.154-6.079 2.896-10.16 9.403-16.512 11.637-9.213 3.24-22.699-5.424-29.24 1.826-9.497 10.525 2.766 28.355 1.71 42.491-.752 10.073-8.078 20.278-5.701 29.762a105.833 105.833 0 0057.37-87.87z')
+      path.globe__land(d='M75.973 76.23c6.431 6.798 6.482 17.193.113 23.218-6.37 6.026-5.709-8.71-9.233-12.51-4.206-4.534-20.426-6.083-14.057-12.108 6.369-6.026 16.746-5.399 23.177 1.4z')
+      ellipse.globe__land(transform='rotate(-12.044)' ry='6.993' rx='10.724' cy='54.96' cx='8.951')
+      path(d='M35.53 51.088A105.833 105.833 0 00-70.073 152.317 105.833 105.833 0 0035.53 251.643a105.833 105.833 0 00105.602-101.228A105.833 105.833 0 0035.53 51.088z' fill-opacity='.098')
+      path(d='M140.461 157.86a125.11 125.11 0 01-104.883 57.12 125.11 125.11 0 01-104.98-57.098 105.833 105.833 0 00104.98 93.761A105.833 105.833 0 00140.46 157.86z' fill-opacity='.098')
+    //- g.globe__hat.globe__hat--left
+    //-   path(d='M22.754-8.7c16.489-14.162 42.744-24.89 62.971-16.933 7.743 3.045 19.806 15.974 13.23 21.166C79.567 10.838 51.084 8.021 26.986 16.7 1.827 30.79-4.233 52.683-4.233 52.683-19.024 47.404 5.798 5.863 22.754-8.7z' fill='red')
+    //-   rect(transform='rotate(-22.708)' ry='8.467' y='22.509' x='6.183' height='22.754' width='96.308' fill='maroon')
+    //-   circle(r='11.113' cy='54.8' cx='-4.762' fill='maroon')
+    g.globe__hat.globe__hat--right
+      g(transform='matrix(-1 0 0 1 211.543 0)')
+        path.globe__hat-body(d='M22.754-8.7c16.489-14.162 42.744-24.89 62.971-16.933 7.743 3.045 19.806 15.974 13.23 21.166C79.567 10.838 51.084 8.021 26.986 16.7 1.827 30.79-4.233 52.683-4.233 52.683-19.024 47.404 5.798 5.863 22.754-8.7z')
+        rect.globe__hat-trim(transform='rotate(-22.708)' ry='8.467' y='22.509' x='6.183' height='22.754' width='96.308')
+        circle.globe__hat-trim(r='11.113' cy='54.8' cx='-4.762')
+    g.globe__face
+      g.globe__cheeks
+        g(transform='translate(72.304 -37.976)')
+          circle(r='9.525' cy='141.989' cx='-31.558')
+          circle(cx='103.38' cy='141.989' r='9.525')
+      g.globe__mouth-container
+        g.globe__mouth.globe__mouth--chewing.globe__stroke(fill='none' stroke-width='2.8' stroke-linecap='round')
+          path.chew-line.chew-line--center(d='M98.58 106.68h18.506')
+          path.chew-line.chew-line--left(d='M91.22 115.058c2.488 0 4.787-1.597 6.031-4.189 1.244-2.592 1.244-5.786 0-8.378-1.244-2.592-3.543-4.189-6.03-4.189' stroke-linejoin='round')
+          path.chew-line.chew-line--right(d='M124.446 115.058c-2.487 0-4.786-1.597-6.03-4.189-1.244-2.592-1.244-5.786 0-8.378 1.244-2.592 3.543-4.189 6.03-4.189' stroke-linejoin='round')
+        g.globe__mouth.globe__mouth--joy
+          path.globe__feature(d='M92.741 103.827a15.119 15.119 0 0015.092 14.363 15.119 15.119 0 0015.082-14.363z')
+          path.globe__tongue(d='M108.212 109.874a8.693 8.693 0 00-8.283 6.063 15.119 15.119 0 007.904 2.253 15.119 15.119 0 008.522-2.649 8.693 8.693 0 00-8.143-5.667z')
+        path.globe__stroke.globe__mouth.globe__mouth--smile(d='M121.269 107.077a13.435 13.435 0 01-6.718 11.636 13.435 13.435 0 01-13.435 0 13.435 13.435 0 01-6.718-11.636' fill='none' stroke-width='3.292' stroke-linecap='round' stroke-linejoin='round')
+        g.globe__mouth.globe__mouth--open(transform='translate(72.304 -40.622)')
+          circle.globe__feature(cx='35.53' cy='145.81' r='15.119')
+          path.globe__tongue(d='M35.908 152.613a8.693 8.693 0 00-8.283 6.063 15.119 15.119 0 007.905 2.253 15.119 15.119 0 008.522-2.65 8.693 8.693 0 00-8.144-5.666z')
+
+      g.globe__eyes
+        path.globe__stroke.globe__eye.globe__eye--joy(d='M58.9 95.143c0-6.672 5.408-12.082 12.08-12.082 6.673 0 12.082 5.41 12.082 12.082' fill='none' stroke='#000' stroke-width='3.051' stroke-linecap='round' stroke-linejoin='round')
+        path.globe__stroke.globe__eye.globe__eye--joy(d='M132.605 95.143c0-6.672 5.409-12.082 12.081-12.082 6.673 0 12.082 5.41 12.082 12.082' fill='none' stroke='#000' stroke-width='3.051' stroke-linecap='round' stroke-linejoin='round')
+        g.globe__eye.globe__eye--open(transform='translate(70.98 -37.976)')
+          circle.globe__feature(cy='131.446' r='13.607')
+          circle.globe__pupil(r='2.91' cy='126.646' cx='-6.161')
+        g.globe__eye.globe__eye--open(transform='translate(144.686 -37.22)')
+          circle.globe__feature(r='13.607' cy='131.446')
+          circle.globe__pupil(r='2.91' cx='-6.161' cy='126.646')
+    g.globe__drop-zone(transform='translate(72.304 -37.976)')
+      circle(cx='35.53' cy='145.81' r='52.917')
+
+
+
+
+
+
+html
+
+
+
+
+
+*
+  box-sizing border-box
+
+:root
+  --hue 45
+  --saturation 80
+  --lightness 90
+  --bg hsl(250, 30, 10)
+  --glow 'hsl(%s, %s, %s)' % (var(--hue) calc(var(--saturation) * 1%) calc(var(--lightness) * 1%))
+  --size 40vmin
+
+body
+  background-color var(--bg)
+  min-height 100vh
+  overflow hidden
+
+.star
+  position absolute
+  top calc(var(--y) * 1%)
+  left calc(var(--x) * 1%)
+  height calc(var(--size) * 1px)
+  width calc(var(--size) * 1px)
+  border-radius 50%
+  background var(--glow)
+  box-shadow 0 0 calc(var(--size) * 1.5px) calc(var(--size) * 0.5px) var(--glow)
+
+.globe
+  height 100%
+  width 100%
+  // For CodePen
+  overflow visible !important
+
+  &__stroke
+    stroke hsl(0, 0%, 5%)
+
+  &__feature
+    fill hsl(0, 0%, 5%)
+
+  &__pupil
+    fill hsl(0, 0%, 100%)
+
+  &__drop-zone
+    opacity 0
+    fill none
+
+  &__tongue
+    fill hsl(10, 80%, 46%)
+
+  &__hat-body
+    fill hsl(10, 80%, 50%)
+
+  &__hat-trim
+    fill hsl(0, 0%, 99%)
+
+  &__cheeks
+    fill hsl(10, 100%, 85%)
+
+  &__land
+    fill hsl(130, 50%, 50%)
+  &__water
+    fill hsl(220, 90%, 75%)
+
+  &__container
+    display none
+    height var(--size)
+    width var(--size)
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+
+    &:before
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+      height 105%
+      width 105%
+      border-radius 50%
+      filter blur(10px)
+      z-index -1
+      background radial-gradient(var(--glow) 50%, transparent 80%) no-repeat
+
+.food
+  position absolute
+  height 48px
+  width 48px
+  border-radius 50%
+  top calc(var(--y) * 1px)
+  left calc(var(--x) * 1px)
+
+  &:after
+    content ''
+    background-image url("https://assets.codepen.io/605876/food-spritesheet.png")
+    background-repeat no-repeat
+    background-position calc(var(--bx) * 1px) calc(var(--by) * 1px)
+    position absolute
+    height 72px
+    width 72px
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+
+  &--santa:after
+    background-image url("https://assets.codepen.io/605876/people-spritesheet.png")
+
+#player
+  transform-origin 0 0
+  position fixed
+  top 0
+  left 0
+  transform scale(var(--scale, 0))
+  transition transform 0.2s
+
+h1
+h2
+  color white
+
+label
+  height 44px
+  width 44px
+  position fixed
+  cursor pointer
+  z-index 10
+
+  & > svg
+    position absolute
+    height 100%
+    width 100%
+    top 0
+    left 0
+
+  path
+    fill hsl(45, 80%, 90%)
+
+  svg:nth-of-type(1)
+    display none
+
+[type='checkbox']
+  // opacity 0
+  height 0
+  width 0
+
+[for="volume"]
+  bottom 1rem
+  right 1rem
+[for="vision"]
+  bottom 4rem
+  right 1rem
+
+#vision:checked ~ #player
+  --scale 1
+
+:checked + label
+  svg:nth-of-type(1)
+    display block
+  svg:nth-of-type(2)
+    display none
+    
+    
+    
+    
+    css stylus
+    
+    
+    
+    
+    
+    import gsap from 'https://cdn.skypack.dev/gsap'
+
+// const CHUNK = 5000
+const VISION_TOGGLE = document.querySelector('#vision')
+const VOLUME_TOGGLE = document.querySelector('#volume')
+const HEAD_RANGE = 3
+const MOUTH_RANGE = 4
+const EYE_RANGE = 5
+const AUDIO = {
+  POP: new Audio('https://assets.codepen.io/605876/pop.mp3'),
+  TOGGLE: new Audio('https://assets.codepen.io/605876/toggle.mp3'),
+  CHEWING: new Audio('https://assets.codepen.io/605876/chewing.mp3'),
+  HOOVER: new Audio('https://assets.codepen.io/605876/hoover.mp3'),
+  ROLLOVER: new Audio('https://assets.codepen.io/605876/rollover.mp3'),
+}
+AUDIO.TOGGLE.muted = AUDIO.POP.muted = AUDIO.CHEWING.muted = AUDIO.HOOVER.muted = AUDIO.ROLLOVER.muted = true
+AUDIO.CHEWING.loop = true
+VOLUME_TOGGLE.addEventListener('change', () => {
+  AUDIO.TOGGLE.muted = AUDIO.POP.muted = AUDIO.CHEWING.muted = AUDIO.HOOVER.muted = AUDIO.ROLLOVER.muted = !AUDIO
+    .TOGGLE.muted
+  if (AUDIO.TOGGLE.muted) window.PLAYER.mute()
+  else window.PLAYER.unMute()
+  AUDIO.TOGGLE.play()
+})
+VISION_TOGGLE.addEventListener('change', () => {
+  AUDIO.TOGGLE.play()
+})
+const FOODS = [
+  {
+    name: 'Grapes',
+    position: [0, 0],
+    score: 5,
+    chew: 1,
+  },
+  {
+    name: 'Watermelon',
+    position: [2, 0],
+    score: 5,
+    chew: 2,
+  },
+  {
+    name: 'Banana',
+    position: [5, 0],
+    score: 4,
+    chew: 3,
+  },
+  {
+    name: 'Apple',
+    position: [9, 0],
+    score: 6,
+    chew: 3,
+  },
+  {
+    name: 'Strawberry',
+    position: [13, 0],
+    score: 6,
+    chew: 0.5,
+  },
+  {
+    name: 'Broccoli',
+    position: [11, 1],
+    score: 6,
+    chew: 2,
+  },
+  {
+    name: 'Burger',
+    position: [14, 2],
+    score: 1,
+    chew: 10,
+  },
+  {
+    name: 'Mushroom',
+    position: [14, 1],
+    score: 10,
+    chew: 0.5,
+  },
+  {
+    name: 'Pizza',
+    position: [0, 3],
+    score: 1,
+    chew: 6,
+  },
+  {
+    name: 'Fries',
+    position: [15, 2],
+    score: 1,
+    chew: 8,
+  },
+  {
+    name: 'Cupcake',
+    position: [15, 5],
+    score: 1,
+    chew: 5,
+  },
+  {
+    name: 'Cake',
+    position: [14, 5],
+    score: 1,
+    chew: 10,
+  },
+  {
+    name: 'Donut',
+    position: [11, 5],
+    score: 2,
+    chew: 10,
+  },
+]
+const SELECTORS = {
+  GLOBE: '.globe',
+  CONTAINER: '.globe__container',
+  MOUTH_CHEWING: '.globe__mouth--chewing',
+  MOUTH_SMILE: '.globe__mouth--smile',
+  MOUTH_JOY: '.globe__mouth--joy',
+  MOUTH_OPEN: '.globe__mouth--open',
+  CHEW_CENTER: '.chew-line--center',
+  CHEW_LEFT: '.chew-line--left',
+  CHEW_RIGHT: '.chew-line--right',
+  MOUTH_CONTAINER: '.globe__mouth-container',
+  EYES: '.globe__eyes',
+  EYE_JOY: '.globe__eye--joy',
+  EYE_OPEN: '.globe__eye--open',
+  CHEEKS: '.globe__cheeks',
+  STAR: '.star',
+  INVERT: 'data-parallax-invert',
+  RANGE: 'data-parallax-range',
+}
+
+// Register Draggable
+gsap.registerPlugin(window.Draggable)
+
+gsap.set([SELECTORS.MOUTH_CONTAINER, SELECTORS.EYES], {
+  transformOrigin: '50% 50%',
+})
+gsap.set(
+  [
+    SELECTORS.CHEEKS,
+    SELECTORS.EYE_JOY,
+    SELECTORS.MOUTH_OPEN,
+    SELECTORS.MOUTH_JOY,
+    SELECTORS.MOUTH_CHEWING,
+  ],
+  {
+    display: 'none',
+  }
+)
+
+const mapBounds = (valueX, valueY, bound, invert) => {
+  const x = gsap.utils.mapRange(
+    0,
+    window.innerWidth,
+    invert ? bound : -bound,
+    invert ? -bound : bound,
+    valueX
+  )
+  const y = gsap.utils.mapRange(
+    0,
+    window.innerHeight,
+    invert ? bound : -bound,
+    invert ? -bound : bound,
+    valueY
+  )
+  return {
+    x,
+    y,
+  }
+}
+const STARS = document.querySelectorAll(SELECTORS.STAR)
+const UPDATE_FEATURES = ({ x, y }) => {
+  gsap.set(SELECTORS.EYES, mapBounds(x, y, EYE_RANGE))
+  gsap.set(
+    [SELECTORS.MOUTH_CONTAINER, SELECTORS.CHEEKS],
+    mapBounds(x, y, MOUTH_RANGE)
+  )
+  gsap.set(SELECTORS.GLOBE, mapBounds(x, y, HEAD_RANGE))
+  STARS.forEach(s => {
+    const INVERT = s.hasAttribute(SELECTORS.INVERT)
+    const RANGE = parseFloat(s.getAttribute(SELECTORS.RANGE))
+    gsap.set(s, mapBounds(x, y, RANGE, INVERT))
+  })
+}
+
+const ROCKING = gsap
+  .timeline({
+    paused: true,
+    repeat: -1,
+    yoyo: true,
+  })
+  .to(SELECTORS.CONTAINER, { yPercent: '-=2' })
+
+const CHEWING_SPEED = 0.1
+const CHEWING = gsap
+  .timeline({
+    paused: true,
+    repeat: -1,
+    yoyo: true,
+  })
+  .to(
+    SELECTORS.MOUTH_CHEWING,
+    {
+      yPercent: 25,
+      duration: CHEWING_SPEED,
+    },
+    0
+  )
+  .to(
+    SELECTORS.CHEW_CENTER,
+    {
+      scaleX: 0.5,
+      duration: CHEWING_SPEED,
+      transformOrigin: '50% 50%',
+    },
+    0
+  )
+  .to(
+    SELECTORS.CHEW_LEFT,
+    {
+      duration: CHEWING_SPEED,
+      xPercent: 80,
+    },
+    0
+  )
+  .to(
+    SELECTORS.CHEW_RIGHT,
+    {
+      duration: CHEWING_SPEED,
+      xPercent: -80,
+    },
+    0
+  )
+
+let blinkTween
+const BLINK = () => {
+  const delay = gsap.utils.random(1, 5)
+  blinkTween = gsap.to(SELECTORS.EYES, {
+    delay,
+    scaleY: 0.1,
+    repeat: 3,
+    yoyo: true,
+    duration: 0.05,
+    onComplete: () => {
+      BLINK()
+    },
+  })
+}
+BLINK()
+window.addEventListener('pointermove', UPDATE_FEATURES)
+const BUFFER = 50
+const genPoint = multiplier => {
+  const x = gsap.utils.random(
+    window.innerWidth * multiplier,
+    window.innerWidth * (1 - multiplier)
+  )
+  const y = gsap.utils.random(
+    window.innerHeight * multiplier,
+    window.innerHeight * (1 - multiplier)
+  )
+  // If there's an overlap, return the function, else return result
+  const BOUNDS = document.querySelector(SELECTORS.GLOBE).getBoundingClientRect()
+  if (
+    x >= BOUNDS.left - BUFFER &&
+    x <= BOUNDS.left + BOUNDS.width + BUFFER &&
+    y >= BOUNDS.top - BUFFER &&
+    y <= BOUNDS.top + BOUNDS.height + BUFFER
+  )
+    return genPoint(multiplier)
+  else return { x, y }
+}
+
+// YouTube functions
+const shutOff = () => {
+  window.PLAYER.pauseVideo()
+  STATE.PLAYING = false
+  STATE.TIMER = 0
+  STATE.TIMEOUT = null
+  // TIMER_LABEL.innerText = REDUCER_LABEL.innerText = 0
+  if (STATE.REDUCER) clearInterval(STATE.REDUCER)
+  STATE.REDUCER = null
+  if (!STATE.CHEWING) {
+    gsap.set([SELECTORS.MOUTH_JOY, SELECTORS.EYE_JOY], {
+      display: 'none',
+    })
+    gsap.set([SELECTORS.MOUTH_SMILE, SELECTORS.EYE_OPEN], { display: 'block' })
+  }
+  BLINK()
+  ROCKING.pause()
+}
+
+const UPDATE = () => {
+  STATE.TIMER -= 10
+  // REDUCER_LABEL.innerText = STATE.TIMER
+}
+const topUp = score => {
+  STATE.PLAYING = true
+  window.PLAYER.playVideo()
+  STATE.TIMER += score
+  // TIMER_LABEL.innerText = STATE.TIMER
+  if (STATE.TIMEOUT) clearTimeout(STATE.TIMEOUT)
+  STATE.TIMEOUT = setTimeout(shutOff, STATE.TIMER)
+  if (!STATE.REDUCER) STATE.REDUCER = setInterval(UPDATE, 10)
+  // window.PLAYER[`${STATE.PLAYING ? 'pause' : 'play'}Video`]()
+}
+
+const onDrag = function(e) {
+  if (this.hitTest(document.querySelector('.globe__drop-zone'), '50%')) {
+    gsap.set([SELECTORS.MOUTH_SMILE, SELECTORS.MOUTH_CHEWING], {
+      display: 'none',
+    })
+    gsap.set(SELECTORS.MOUTH_OPEN, { display: 'block' })
+  } else {
+    if (!STATE.PLAYING)
+      gsap.set(SELECTORS[STATE.CHEWING ? 'MOUTH_CHEWING' : 'MOUTH_SMILE'], {
+        display: 'block',
+      })
+    else if (STATE.CHEWING)
+      gsap.set(SELECTORS.MOUTH_CHEWING, { display: 'block' })
+    gsap.set(SELECTORS.MOUTH_OPEN, { display: 'none' })
+  }
+}
+
+const PARTY = gsap
+  .timeline({
+    paused: true,
+    repeat: 5,
+    onComplete: () => {
+      gsap.set(document.documentElement, {
+        '--hue': 45,
+        '--saturation': 80,
+        '--lightness': 90,
+      })
+    },
+  })
+  .set(document.documentElement, {
+    '--hue': 0,
+    '--saturation': 90,
+    '--lightness': 50,
+  })
+  .to(document.documentElement, { '--hue': 360, duration: 1, ease: 'none' })
+
+const onRelease = function(e) {
+  if (this.hitTest(document.querySelector('.globe__drop-zone'), '50%')) {
+    AUDIO.HOOVER.play()
+    gsap.set(SELECTORS.MOUTH_SMILE, { display: 'none' })
+    gsap.set(SELECTORS.MOUTH_OPEN, { display: 'block' })
+    gsap.to(e.target, {
+      scale: 0,
+      onComplete: () => {
+        e.target.remove()
+        AUDIO.HOOVER.pause()
+        AUDIO.HOOVER.currentTime = 0
+        topUp(parseInt(e.target.getAttribute('data-score'), 10) * 1000)
+        if (e.target.className.includes('food--santa')) {
+          // Play party mode for ten seconds
+          PARTY.restart()
+        }
+        if (blinkTween) {
+          gsap.set(SELECTORS.EYES, { scaleY: 1 })
+          blinkTween.kill()
+        }
+        gsap.set(
+          [
+            SELECTORS.MOUTH_JOY,
+            SELECTORS.MOUTH_OPEN,
+            SELECTORS.EYE_OPEN,
+            SELECTORS.MOUTH_SMILE,
+          ],
+          {
+            display: 'none',
+          }
+        )
+        gsap.set(
+          [SELECTORS.MOUTH_CHEWING, SELECTORS.EYE_JOY, SELECTORS.CHEEKS],
+          { display: 'block' }
+        )
+        POPULATE_FOOD()
+        ROCKING.play()
+        CHEWING.play()
+        AUDIO.CHEWING.play()
+        STATE.CHEWING = true
+        gsap.delayedCall(e.target.getAttribute('data-chew'), () => {
+          CHEWING.pause()
+          AUDIO.CHEWING.pause()
+          AUDIO.CHEWING.currentTime = 0
+          STATE.CHEWING = false
+          gsap.set([SELECTORS.MOUTH_CHEWING, SELECTORS.CHEEKS], {
+            display: 'none',
+          })
+          gsap.set([SELECTORS[STATE.PLAYING ? 'MOUTH_JOY' : 'MOUTH_SMILE']], {
+            display: 'block',
+          })
+          if (!STATE.PLAYING) {
+            gsap.set(SELECTORS.EYE_JOY, { display: 'none' })
+            gsap.set(SELECTORS.EYE_OPEN, { display: 'block' })
+          }
+        })
+      },
+      x:
+        window.innerWidth / 2 -
+        parseFloat(e.target.style.getPropertyValue('--x'), 10) -
+        e.target.offsetWidth / 2,
+      y:
+        window.innerHeight / 2 -
+        parseFloat(e.target.style.getPropertyValue('--y'), 10) -
+        e.target.offsetHeight / 2,
+    })
+  } else {
+    if (!STATE.PLAYING)
+      gsap.set(SELECTORS[STATE.CHEWING ? 'MOUTH_CHEWING' : 'MOUTH_SMILE'], {
+        display: 'block',
+      })
+    else if (STATE.CHEWING)
+      gsap.set(SELECTORS.MOUTH_CHEWING, { display: 'block' })
+    gsap.set(SELECTORS.MOUTH_OPEN, { display: 'none' })
+    gsap.to(e.target, {
+      x: 0,
+      y: 0,
+    })
+  }
+}
+
+const POPULATE_FOOD = initial => {
+  const ITEM = document.createElement('div')
+  ITEM.className = 'food'
+  const { x, y } = genPoint(0.1)
+  const INDEX = Math.floor(Math.random() * (FOODS.length - 1))
+  const CHOSEN =
+    Math.random() > 0.9 && !initial
+      ? {
+          name: 'Santa',
+          position: [6, 0],
+          score: 30,
+          chew: 5,
+        }
+      : FOODS[INDEX]
+  ITEM.style.setProperty('--x', x)
+  ITEM.style.setProperty('--y', y)
+  ITEM.style.setProperty('--bx', CHOSEN.position[0] * -72)
+  ITEM.style.setProperty('--by', CHOSEN.position[1] * -72)
+  ITEM.setAttribute('title', CHOSEN.name)
+  ITEM.setAttribute('data-chew', CHOSEN.chew)
+  ITEM.setAttribute('data-score', CHOSEN.score)
+  if (CHOSEN.name === 'Santa') ITEM.className += ' food--santa'
+  window.Draggable.create(ITEM, {
+    onDrag,
+    onRelease,
+  })
+  ITEM.addEventListener('pointerover', () => {
+    gsap.to(ITEM, {
+      duration: 0.1,
+      scale: 1.5,
+      rotate: Math.random() > 0.5 ? 30 : -30,
+      yoyo: true,
+      repeat: 1,
+    })
+  })
+  document.body.appendChild(ITEM)
+  gsap.from(ITEM, { onStart: () => AUDIO.POP.play(), scale: 0, duration: 0.2 })
+}
+gsap.set(SELECTORS.CONTAINER, { display: 'block' })
+for (let i = 0; i < 5; i++) {
+  POPULATE_FOOD(true)
+}
+// Start YouTube Embed Code
+
+// YouTube Video ID
+const videoId = '8NLLAeNhH3k'
+
+const STATE = {
+  PLAYING: false,
+  TIMER: 0,
+  CHEWING: false,
+  TIMEOUT: null,
+  REDUCER: null,
+}
+
+const onReady = () => {
+  // Mute the player by default/for streaming
+  // TODO: Remove!
+  window.PLAYER.mute()
+  // seekTo can skip to miss the gap at the start
+  window.PLAYER.seekTo(10)
+  // Pause it as seek starts playing
+  window.PLAYER.pauseVideo()
+}
+const onStateChange = e => {
+  // Track has ended
+  if (e.data === 0) {
+    window.PLAYER.seekTo(10)
+    window.PLAYER.pauseVideo()
+    STATE.PLAYING = false
+  }
+}
+// console.info(YT)
+// window.onYouTubeIframeAPIReady = () => {
+// console.info('hello')
+window.PLAYER = new window.YT.Player('player', {
+  height: 200,
+  width: 200,
+  videoId,
+  events: {
+    onReady,
+    onStateChange,
+  },
+})
+// }
+
+
+
+
+
+js bable
