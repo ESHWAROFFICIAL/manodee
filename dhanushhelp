@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHY IS SMOKERS RACIST??!!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  </head>
+<body><h1 class="glow">ABOUT AND CONTACT US</h1>
+<!-------------------------------------->
+<div class="navbar">
+  <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <div class="cover">
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="coverr">
+  <h3 class="boo">Contact Us</h3>
+  <br>
+  <br>
+  <p> If there is any problem in the product such as expiry to damage , please don't call me because
+     Iam not a shopkeeper. If you are feeling bored or sad in your house or office or work , please call me 
+    to<b class="pp"> +91 8073375369</b> because even iam feeling bored and even i want to resolve and understand your feelings.
+  Still you are not satisfied with product , then mail me to <b class="pp"> doitany6511@gmail.com</b> for further enquires !!:wink:.
+ </p>
+ <br>
+ <br>
+ <br>
+</div>
+<div class="coverrr">
+  <h3 class="boa">About Us</h2>
+    <br>
+    <br>
+  <p class="p">The pitcure u are seeing below are the founders and coders of this webpage.These are single since 14 years AND
+    are finding for a girl who can see and say " I LOVE U" but can't get it due to they are something which
+  makes them special i.e they are abnormal human beings . They are abnormal because they read maths and 
+get distinction. If u feel this webpage is interesting , then please share with your friends    </p>
+<div class="imoage">
+<img src="https://res.cloudinary.com/djeukfvxv/image/upload/v1609337626/ABOUT_US_fnpk0j.png" alt="" height= "240px" width= "400px">
+</div><!--------------profile--profile--profile--profile--profile--profile--profile--profile-->
+  <p class="ppp">Click on the image to reveal their name</p>  <div class="card__collection clear-fix">
+<div class="cards cards--two">
+    <img src="https://res.cloudinary.com/djeukfvxv/image/upload/v1608991186/Dhanush_karma_burma_ysrdfj.jpg" class="img-responsive" alt="Cards Image">
+    <span class="cards--two__rect"></span>
+    <span class="cards--two__tri"></span>
+    <p>Dhanush KarmaBurma</p>    <ul class="cards__list">
+      <li><i class="fab fa-facebook-f"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-instagram"></i></li>
+      <li><i class="fab fa-linkedin-in"></i></li>
+    </ul>
+  </div>  <div class="cards cards--three">
+    <img src="https://res.cloudinary.com/djeukfvxv/image/upload/v1609139424/dog_sleeeeeeeeeeeeeeeeeeeeeeeeeeeeping_cwmbsi.png" class="img-responsive" alt="">
+    <span class="cards--three__rect-1">
+      <span class="shadow-1"></span>
+      <p>Dhanush S S</p>
+    </span>
+    <span class="cards--three__rect-2">
+      <span class="shadow-2"></span>
+    </span>
+    <span class="cards--three__circle"></span>
+    <ul class="cards--three__list">
+      <li><i class="fab fa-facebook-f"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-linkedin-in"></i></li>
+    </ul>
+  </div>
+</div>
+  <p>Dhanush KarmaBurma :- He is a 14 year old coders soul helping him in giving ideas. Without him Dhanush S S is nothing . Dhanush KarmaBurma has been awarded
+    for doing arguing with all living things. Once he argued with dog saying "Why are u saying bow! bow! , can't u say wow! wow! , Atleast someone will adopt you".
+  </p>
+  <br>
+  <br>
+  <p>Dhanush S S -: He is the founder of website. He is a boy.  </p>
+  </div>
+<br>
+<br><br>
+<div class="social media">
+<h3>Follow me On : -</h3>
+<a href="https://www.google.co.in/maps/place/64,+3rd+Main+Rd,+Krishna+Devaraya+Nagar,+Yelachenahallli,+Kumaraswamy+Layout,+Bengaluru,+Karnataka+560078/@12.8984927,77.5667513,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae15675f6dd211:0xd9310269022493af!8m2!3d12.8984927!4d77.56894?hl=en" class="fa fa-google"></a>
+<a href="https://www.instagram.com/hellcool_/" class="fa fa-instagram"></a>
+<a href="https://www.youtube.com/channel/UCJf_yJZm5tFhvwNL43YG6uA" class="fa fa-youtube"></a>
+</div>
+</div></body><!--------------------------style--style---style---style--style--style-->
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+  }.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+  padding: 10px;
+}.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}.navbar a:hover {
+  background-color: #000;
+}.active {
+  background-color: goldenrod;
+}@media maker screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}/* Set a style for all buttons */
+button {
+  background-color: goldenrod;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}button:hover {
+  opacity: 0.8;
+}/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #F44336
+;
+}/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}.container {
+  padding: 16px;
+}span.psw {
+  float: right;
+  padding-top: 16px;
+}/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}/* Modal Content/Box */
+.modal-content {
+  background-color: #FEFEFE
+;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid rgb(255, 255, 255);
+  width: 80%; /* Could be more or less, depending on screen size */
+}/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}/* Change styles for span and cancel button on extra small screens */
+@media maker screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}input[type=text]:focus {
+  width: 100%;
+}.glow {
+  font-size: 8em;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 3s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #914905
+, 0 0 40px #914905
+, 0 0 50px #914905
+, 0 0 60px #914905
+, 0 0 70px #914905
+;
+  }  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #FFE136
+, 0 0 40px #FFE136
+, 0 0 50px #FFE136
+, 0 0 60px #FFE136
+, 0 0 70px #FFE136
+, 0 0 80px #FFE136
+;
+  }
+}.dropbtn {
+  background-color: goldenrod;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}.dropdown {
+  position: relative;
+  display: inline-block;
+}.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #F1F1F1
+;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}.dropdown-content a:hover {background-color: brown;}.dropdown:hover .dropdown-content {display: block;}.dropdown:hover .dropbtn {background-color: goldenrod;}
+</style><script src="app.js">// Get the modal
+var modal = document.getElementById('id01');// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}</script>
+</html>
+
+
+
+
+
+html
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap') repeat scroll 0 0 rgba(0, 0, 0, 0);
+@import 'https://fonts.googleapis.com/css?family=Do+Hyeon';
+html {
+    scroll-behavior: smooth;
+}.pp{
+    color: red;
+}*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}.clear-fix:after {
+    display: block;
+    clear: both;
+    content: '';
+}.img-responsive {
+    max-width: 100%;
+    height: auto;
+}.card__collection {
+    position: relative;
+    display: block;
+    background: rgba(10, 10, 10, .5);
+    padding: 10px;
+    font-family: 'Do Hyeon', sans-serif;
+    overflow: hidden;
+}.card__collection .cards {
+    width: 300px;
+    height: 400px;
+    display: block;
+    background-size: cover;
+    float: left;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    margin: 10px;
+}.card__collection .cards--one {
+    backface-visiblility: hidden;
+}.card__collection .cards--one:hover:after {
+    bottom: -20px;
+}.card__collection .cards--one:hover:before {
+    bottom: -10px;
+}.card__collection .cards--one:hover .cards--one__rect {
+    left: 45%;
+}.card__collection .cards--one:hover .cards--one__rect--back {
+    left: 50%;
+}.card__collection .cards--one::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 70px;
+    transform: rotate(-3deg);
+    background: #E660E3
+;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    right: -10px;
+    z-index: 9;
+    transition: all 0.2s ease-in;
+    transition-delay: 0.3s;
+}.card__collection .cards--one:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 80px;
+    transform: rotate(-3deg);
+    bottom: -90px;
+    left: 0;
+    background: #fff;
+    right: -10px;
+    z-index: 5;
+    transition: all 0.2s ease-in;
+    transition-delay: 0.1s;
+}.card__collection .cards--one__rect {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    background: #0F9BC0
+;
+    width: 126px;
+    height: 55px;
+    transform: skewY(5deg);
+    position: absolute;
+    display: block;
+    top: 60%;
+    left: -45%;
+    z-index: 1;
+    line-height: 3.3rem;
+    text-align: center;
+    transition: all 0.2s ease-in;}.card__collection .cards--one__rect--back {
+    display: block;
+    background: rgba(34, 65, 154, .8);
+    width: 126px;
+    height: 55px;
+    transform: skewY(7deg);
+    position: absolute;
+    top: 65%;
+    left: -50%;
+    transition: all 0.2s ease-in;
+    transition-delay: 0.3s;
+}.card__collection .cards--one__rect p {
+    transform: skewY(-7deg);
+    position: relative;}.card__collection .cards--two {
+    position: relative;
+    backface-visibility: hidden;
+    border: 10px solid white;
+}.card__collection .cards--two p {
+    position: absolute;
+    top: 83%;
+    left: -100%;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 20px;
+    z-index: 8;
+    transition: all 0.6s ease;}.card__collection .cards--two:hover p {
+    left: 8%;
+}.card__collection .cards--two:hover img {
+    transform: translateY(-15px);
+}.card__collection .cards--two:hover .cards--two__rect {
+    top: 75%;
+}.card__collection .cards--two:hover .cards--two__rect:before {
+    transform: translateY(15px);
+}.card__collection .cards--two:hover li {
+    transform: translateY(0);
+}.card__collection .cards--two:hover .cards--two__tri {
+    right: -40%;
+}.card__collection .cards--two:hover .cards--two__tri:before {
+    right: -312px;
+}.card__collection .cards--two img {
+    transition: all 0.2s ease;
+}.card__collection .cards--two__tri {
+    border-top: 220px solid transparent;
+    border-bottom: 190px solid transparent;
+    border-right: 288px solid #fff;
+    opacity: 0.9;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+}.card__collection .cards--two__tri:before {
+    border-top: 220px solid transparent;
+    border-bottom: 190px solid transparent;
+    border-right: 288px solid #57CCFD
+;
+    position: absolute;
+    content: '';
+    display: block;
+    top: -220px;
+    right: -612px;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.2s;
+}.card__collection .cards--two__rect {
+    width: 750px;
+    height: 200px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 175%;
+    left: -78%;
+    transform: rotate(30deg);
+    z-index: 5;
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;}.card__collection .cards--two__rect:before {
+    content: '';
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background: #F07306
+;
+    transform: translateY(200px);
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.1s;
+}.card__collection .cards--two ul {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    z-index: 9;
+}.card__collection .cards--two ul li {
+    display: inline-block;
+    font-size: 16px;
+    margin: 7px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(100px);
+}.card__collection .cards--two ul li:nth-child(2) {
+    transition-delay: 0.2s;
+}.card__collection .cards--two ul li:nth-child(3) {
+    transition-delay: 0.3s;
+}.card__collection .cards--two ul li:nth-child(4) {
+    transition-delay: 0.4s;
+}.card__collection .cards--three {
+    position: relative;
+    z-index: 10;
+}.card__collection .cards--three:hover .cards--three__rect-1 {
+    left: 10%;
+}.card__collection .cards--three:hover .cards--three__rect-1 .shadow-1 {
+    left: -20%;
+}.card__collection .cards--three:hover .cards--three__rect-2 {
+    left: 60%;
+}.card__collection .cards--three:hover .cards--three__rect-2:before {
+    left: -100%;
+}.card__collection .cards--three:hover .cards--three__rect-2:after {
+    left: 80%;
+}.card__collection .cards--three:hover .cards--three__rect-2 .shadow-2 {
+    left: -10%;
+}.card__collection .cards--three:hover .cards--three__circle {
+    transform: scale(1);
+}.card__collection .cards--three:hover .cards--three__circle:before {
+    transform: scale(0.9);
+}.card__collection .cards--three:hover .cards--three__list li {
+    transform: translateX(0);
+}.card__collection .cards--three__rect-1 {
+    background: #fff;
+    width: 200px;
+    height: 110px;
+    transform: skewX(-20deg);
+    display: block;
+    position: absolute;
+    top: 73%;
+    opacity: 0.9;
+    left: -100%;
+    z-index: 8;
+    transition: all 0.5s ease-in;
+}.card__collection .cards--three__rect-1 p {
+    font-size: 20px;
+    color: #fff;
+    transform: skewX(20deg);
+    line-height: 6rem;
+}.card__collection .cards--three__rect-1 .shadow-1 {
+    background: black;
+    width: 230px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    left: -200%;
+    z-index: -1;
+    transition: all 0.3s ease-in;
+}.card__collection .cards--three__rect-2 {
+    width: 100px;
+    height: 70px;
+    background: #fff;
+    position: absolute;
+    top: 65%;
+    left: 1000%;
+    opacity: 0.9;
+    transform: skewX(-20deg);
+    z-index: 8;
+    transition: all 0.5s ease-in;
+}.card__collection .cards--three__rect-2::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 40px;
+    background: #57CCFD
+;
+    opacity: 1;
+    position: absolute;
+    left: 500%;
+    top: 10%;
+    transition: all 0.3s ease-in;
+}.card__collection .cards--three__rect-2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 40px;
+    background: black;
+    opacity: 1;
+    position: absolute;
+    left: 500%;
+    top: 114%;
+    transition: all 0.5s ease-in;
+    transition-delay: 0.2s;
+}.card__collection .cards--three__rect-2 .shadow-2 {
+    background: #7F06F0
+;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: -10%;
+    left: 500%;
+    transition: all 0.5s ease-in;
+    transition-delay: 0.2s;
+}.card__collection .cards--three__circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    opacity: 0.9;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}.card__collection .cards--three__circle:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #08D3DA
+;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    transition-delay: 0.2s;
+}.card__collection .cards--three__list {
+    list-style: none;
+    position: absolute;
+    top: -9px;
+    right: 7px;
+    padding-top: 60px;
+    transition: all 0.4s ease;
+}.card__collection .cards--three__list li {
+    display: inline-block;
+    margin: 4px;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(82, 7, 221, 0.9);
+    text-align: center;
+    line-height: 1.7rem;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    transform: translateX(500%);
+}.card__collection .cards--three__list li:nth-child(1) {
+    transition-delay: 0.2s;
+}.card__collection .cards--three__list li:nth-child(2) {
+    transition-delay: 0.3s;
+}.card__collection .cards--three__list li:nth-child(3) {
+    transition-delay: 0.4s;
+}.coverr{
+    color: white;
+    font-size: 3em;
+}.coverrr{
+    color: white;
+    font-size: 3em;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;}.cover>p{
+    text-align: center;
+}.ppp{
+    color: red;
+}.boo{
+    color: cyan;
+    font-size: 3em;
+}
+.boa{
+    color: cyan;
+}.bee{
+    color: white;
+    font-size: 1.5em;
+}.imoage{
+    flex-direction: column;
+    margin-left: 1800px;}.fa-google {
+    background: #DD4B39
+;
+    color: white;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}.fa:hover {
+    opacity: 0.7;
+}
+.fa-instagram {
+    background: #125688
+;
+    color: white;
+}body {
+    background: #fff;
+}.title {
+    font-size: 5.6rem;
+    font-family: 'Lobster', cursive;
+}.wrapper {
+    background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80");
+    color: #eee;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    animation: animation 100s linear infinite;
+}@keyframes animation {
+    100% {
+        background-position: 0px -3000px;
+    }
+}.memes{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+    margin: 13px;
+}.meme-bheem{}
+
+
+
+
+
+
+css
