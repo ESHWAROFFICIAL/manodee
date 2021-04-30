@@ -1,0 +1,1160 @@
+<body>
+    <section class="container">
+        <section class="canvas">
+            <!-- Row 01 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 02 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 03 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 04 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 05 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 06 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 07 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 08 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 09 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 10 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 11 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 12 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 13 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 14 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-accent"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 15 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 16 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 17 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 18 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal-gloss"></div>
+            <div class="pixel metal-gloss-accent"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 19 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 20 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel metal-shadow"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 21 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 22 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 23 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-opening"></div>
+            <div class="pixel mouth-opening"></div>
+            <div class="pixel mouth-opening"></div>
+            <div class="pixel mouth-opening"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 24 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel mouth-opening"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-lips"></div>
+            <div class="pixel mouth-opening"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 25 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel mouth-shadow"></div>
+            <div class="pixel mouth-shadow"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 26 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel skin"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 27 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 28 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 29 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black-accent"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 30 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel black"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 31 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <!-- Row 32 -->
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+        </section>
+    </section>
+</body>
+
+
+
+
+
+
+html
+
+
+
+
+
+
+:root {
+  --metal-color: #74818a;
+  --metal-accent-color: #485761;
+  --metal-shadow-color: #3b3b3b;
+  --black-color: #000;
+  --black-accent-color: #9c9c9c;
+  --mouth-opening-color: #d67171;
+  --mouth-lips-color: #521a1a;
+  --mouth-shadow-color: #331717;
+  --metal-gloss-color: #fff;
+  --metal-gloss-accent-color: #c9c9c9;
+  --skin-color: #d49383;
+}
+
+.container {
+  width: 100%;
+  background-color: var(--black-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  width: 640px;
+  height: 640px;
+  background-color: rgb(50, 39, 155);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pixel {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+
+.pixel.metal {
+  background-color: var(--metal-color);
+}
+
+.pixel.metal-accent {
+  background-color: var(--metal-accent-color);
+}
+
+.pixel.metal-shadow {
+  background-color: var(--metal-shadow-color);
+}
+
+.pixel.black {
+  background-color: var(--black-color);
+}
+
+.pixel.black-accent {
+  background-color: var(--black-accent-color);
+}
+
+.pixel.mouth-opening {
+  background-color: var(--mouth-opening-color);
+}
+
+.pixel.mouth-lips {
+  background-color: var(--mouth-lips-color);
+}
+
+.pixel.mouth-shadow {
+  background-color: var(--mouth-shadow-color);
+}
+
+.pixel.metal-gloss {
+  background-color: var(--metal-gloss-color);
+}
+
+.pixel.metal-gloss-accent {
+  background-color: var(--metal-gloss-accent-color);
+}
+
+.pixel.skin {
+  background-color: var(--skin-color);
+}
+
+
+
+
+
+css
