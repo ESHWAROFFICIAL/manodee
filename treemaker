@@ -1,0 +1,1067 @@
+#root
+
+
+
+html pug
+
+
+
+$menuWidth: 290px;
+$menuHeight: 50px;
+$color: #444;
+$bg: white;
+
+.tree-container {
+	width: 100vw;
+	height: 100vh;
+	//background-position: center;
+	//background-size: cover;
+	display: grid;
+	place-content: center;
+
+	.tree {
+		position: relative;
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-right: $menuWidth;
+		
+		.tree-part {
+			margin-bottom: -1px;
+			min-height: .1rem;
+
+			&.tree-top {
+				flex-grow: 2;
+				clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+			}
+
+			&.tree-center {
+				flex-grow: 1;
+			}
+		}
+		
+		&.shadow {
+			.tree-center,
+			.tree-bottom {
+				position: relative;
+
+				&:after {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+				}
+			}
+			
+			.tree-center:after {
+				background: linear-gradient(to bottom, rgba(black, 0.3), transparent);
+			}
+
+			.tree-bottom:after {
+				background: linear-gradient(to left, rgba(black, 0.3), transparent);
+			}
+		}
+		
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -15%;
+			height: 30%;
+			background: radial-gradient(rgba(black, 0.3), transparent 50%);
+		}
+	}
+}
+
+.canvas {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	
+	&.active {
+		cursor: pointer;
+	}
+}
+
+.cpanel {
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: $menuWidth;
+	color: $color;
+	//box-shadow: -5px 0 15px rgba(black, 0.1);
+	//backdrop-filter: blur(3px);
+
+	.cpanel-menu {
+		position: relative;
+		z-index: 2;
+		display: flex;
+
+		.cpanel-link {
+			flex-grow: 1;
+			display: inline-grid;
+			color: inherit;
+			height: $menuHeight;
+			place-content: center;
+			background-color: rgba($bg, .7);
+
+			&:not(.active) {
+				//box-shadow: 0 0 15px rgba(black, 0.3) inset;				
+			}
+
+			&.active {
+				background-color: $bg;
+			}
+		}
+	}
+	
+	.cpanel-tab {
+		position: absolute;
+		right: 0;
+		top: $menuHeight;
+		left: 0;
+		bottom: 0;
+		padding: 1rem;
+		background-color: $bg;
+
+		.cpanel-tip {
+			display: block;
+			font-style: italic;
+			font-weight: 400;
+			font-size: 1rem;
+			opacity: .7;
+		}
+
+		.cpanel-option {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 1rem;
+
+			input {
+				&[type="range"] {
+					width: 100px;
+				}
+			}
+		}
+		
+		button {
+			margin-top: 1rem;
+			width: 100%;
+			border: none;
+			padding: 0.5rem 0;
+			color: $bg;
+			background-color: $color;
+		}
+	}
+}
+
+/* Background Options*/
+
+.bgs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	.bgs-item {
+		width: 50px;
+		height: 50px;
+		//color: white;
+		border: 1px dashed;
+		background-size: cover;
+		background-position: center;
+		display: inline-grid;
+		place-items: center;
+
+		&.active {
+			border-style: solid;
+		}
+	}
+}
+
+/* Decoration Options */
+
+.decorations {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1rem;
+
+	.decorations-item {
+		position: relative;
+		flex-grow: 1;
+
+		.decorations-instance {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		img {
+			// width: 100px;
+		}
+	}
+}
+
+/* Menu Functions */
+
+.cpanel-tab {
+	&:not(.cpanel-Decorations) {
+		opacity: 0;
+	}
+	
+	&.active {
+		opacity: 1;
+		z-index: 1;
+	}
+}
+
+.cpanel-tip,
+.decorations-clear,
+.decorations-master,
+.decorations-instance:last-child {
+	opacity: 0 !important;
+
+	.active & {
+		opacity: 1 !important;
+	}
+}
+
+/*General Style*/
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+
+
+
+scss
+
+
+
+
+
+import React, { Component } from "https://cdn.skypack.dev/react@17.0.1";
+import ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
+import { gsap, Draggable } from "https://cdn.skypack.dev/gsap@3.5.1/all";
+
+//gsap.registerPlugin(InertiaPlugin);
+gsap.registerPlugin(Draggable);
+
+const defaultValue = {
+	menu: "Tree",
+	treeWidth: 250,
+	treeHeight: 500,
+	treeParts: 7,
+	treeColor1: "#00F260",
+	treeColor2: "#0575E6",
+	treeColorAngle: 40,
+	treeShadow: true,
+	treeCurve: 50,
+	treeAngle: 15,
+	trunkWidth: 50,
+	trunkHeight: 50,
+	trunkColor: "#8B2418",
+	bgColor1: "#ee9ca7",
+	bgColor2: "#ffdde1",
+	bgColorAngle: 40,
+	canvasColor: "#00adee",
+	canvasSize: 5,
+	canvasClear: false,
+	canvasRandom: false,
+	canvasSync: false,
+	canvasSpeed: 50
+	//canvasWire: true,
+};
+
+const decorations = [
+	"🔴",
+	"🟠",
+	"🟢",
+	"🔵",
+	"🟣",
+	"⚪️",
+	"🔔",
+	"⚜️",
+	"❣️",
+	"🧸",
+	"🎭",
+	"🍭",
+	"🍬",
+	"🍫",
+	"🐲",
+	"🕊",
+	"🍀",
+	"🌿",
+	"🌸",
+	"🌼",
+	"🌻",
+	"🌹",
+	"🌺",
+	"🍁",
+	"🍄",
+	"💐",
+	"🌾",
+	"🎄",
+	"🧞‍♂️",
+	"🎅",
+	"🤶",
+	"⛄️",
+	"🌙",
+	"🌝",
+	"🌚",
+	"🌞",
+	"🪐",
+	"🎁",
+	"⭐️",
+	"👏",
+	"❄️",
+	"💫",
+	"✨",
+	"🎗",
+	"🎊"
+	//<img src="https://assets.codepen.io/5356857/decoration1.png" />,
+];
+
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+class TabTree extends Component {
+	treeRandom() {
+		this.props.setState({
+			treeWidth: getRandomInt(50, 500),
+			treeHeight: getRandomInt(50, 500),
+			treeColor1: rgbToHex(
+				getRandomInt(0, 255),
+				getRandomInt(0, 255),
+				getRandomInt(0, 255)
+			),
+			treeColor2: rgbToHex(
+				getRandomInt(0, 255),
+				getRandomInt(0, 255),
+				getRandomInt(0, 255)
+			),
+			treeParts: getRandomInt(0, 10),
+			treeCurve: getRandomInt(0, 100),
+			treeAngle: getRandomInt(0, 50),
+			trunkWidth: getRandomInt(1, 100),
+			trunkHeight: getRandomInt(0, 100),
+			trunkColor: rgbToHex(
+				getRandomInt(0, 255),
+				getRandomInt(0, 255),
+				getRandomInt(0, 255)
+			),
+			bgColor1: rgbToHex(
+				getRandomInt(0, 255),
+				getRandomInt(0, 255),
+				getRandomInt(0, 255)
+			),
+			bgColor2: rgbToHex(
+				getRandomInt(0, 255),
+				getRandomInt(0, 255),
+				getRandomInt(0, 255)
+			),
+		});
+
+	}
+	
+	render() {
+		const props = this.props.props;
+
+		return (
+			<>
+				<label className="cpanel-option">
+					<span>Tree Width</span>
+					<input
+						min="10"
+						type="range"
+						value={props.treeWidth / 5}
+						onChange={(e) => this.props.setState({ treeWidth: e.target.value * 5 })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Tree Height</span>
+					<input
+						min="10"
+						type="range"
+						value={props.treeHeight / 5}
+						onChange={(e) => this.props.setState({ treeHeight: e.target.value * 5 })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Tree Parts</span>
+					<input
+						max="10"
+						type="range"
+						value={props.treeParts}
+						onChange={(e) => this.props.setState({ treeParts: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Tree Curve</span>
+					<input
+						type="range"
+						value={props.treeCurve}
+						onChange={(e) => this.props.setState({ treeCurve: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Tree Angle</span>
+					<input
+						max="50"
+						type="range"
+						value={props.treeAngle}
+						onChange={(e) => this.props.setState({ treeAngle: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Color 1</span>
+					<input
+						type="color"
+						value={props.treeColor1}
+						onChange={(e) => this.props.setState({ treeColor1: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Color 2</span>
+					<input
+						type="color"
+						value={props.treeColor2}
+						onChange={(e) => this.props.setState({ treeColor2: e.target.value })}
+					/>
+				</label>
+
+				{/*
+				<label className="cpanel-option">
+					<span>Color Angle</span>
+					<input
+						max="18"
+						type="range"
+						value={props.treeColorAngle / 10}
+						onChange={(e) =>
+							this.props.setState({ treeColorAngle: e.target.value * 10 })
+						}
+					/>
+				</label>
+				*/}
+
+				<label className="cpanel-option">
+					<span>Color Shadow</span>
+					<input
+						type="checkbox"
+						checked={props.treeShadow}
+						onChange={(e) => this.props.setState({ treeShadow: !props.treeShadow })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Trunk Width</span>
+					<input
+						min="1"
+						type="range"
+						value={props.trunkWidth}
+						onChange={(e) => this.props.setState({ trunkWidth: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Trunk Height</span>
+					<input
+						type="range"
+						value={props.trunkHeight}
+						onChange={(e) => this.props.setState({ trunkHeight: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Trunk Color</span>
+					<input
+						type="color"
+						value={props.trunkColor}
+						onChange={(e) => this.props.setState({ trunkColor: e.target.value })}
+					/>
+				</label>
+				
+				<label className="cpanel-option">
+					<span>Background 1</span>
+					<input
+						type="color"
+						value={props.bgColor1}
+						onChange={(e) => this.props.setState({ bgColor1: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Background 2</span>
+					<input
+						type="color"
+						value={props.bgColor2}
+						onChange={(e) => this.props.setState({ bgColor2: e.target.value })}
+					/>
+				</label>
+
+        <button
+          onClick={() => this.treeRandom()}
+        >
+          Randomize!
+        </button>
+			</>
+		);
+	}
+}
+
+class Decoration extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      instances: 1,
+    };
+  }
+
+  draggableUpdate() {
+    const cache = this;
+    const space = 50;
+    Draggable.create(".s" + cache.props.id, {
+      type: "x, y",
+			//bounds: window,
+      //inertia: true,
+			//edgeResistance: 0,
+      onRelease: function () {
+        if (this.target.classList.contains("e" + (cache.state.instances - 1))) {
+          if (Math.abs(this.x) > space || Math.abs(this.y) > space) {
+            cache.setState({ instances: cache.state.instances + 1 });
+          }
+          if (!cache.props.decorationsInit) {
+            cache.props.setState({ decorationsInit: true });
+          }
+        }
+      },
+    });
+  }
+
+  componentDidMount() {
+    this.draggableUpdate();
+  }
+
+  componentDidUpdate() {
+    if (this.props.decorationsClear) {
+      this.setState({ instances: 1 });
+      this.props.setState({ decorationsClear: false });
+    }
+
+    this.draggableUpdate();
+  }
+
+  render() {
+    let instances = [];
+
+    for (let i = 0; i < this.state.instances; i++) {
+      instances.push(
+        <div className={"decorations-instance s" + this.props.id + " e" + i} style={{fontSize: this.props.decorationsSize+"rem"}}>
+          {this.props.item}
+        </div>
+      );
+    }
+
+    return (
+      <div className="decorations-item">
+        <div className="decorations-master" style={{fontSize: this.props.decorationsSize+"rem"}}>{this.props.item}</div>
+        {!this.props.decorationsClear && instances}
+      </div>
+    );
+  }
+}
+
+class TabDecorations extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      decorationsInit: false,
+      decorationsClear: false,
+			decorationsSize: 2,
+    };
+  }
+
+  decorationsClear() {
+    if (confirm("You are removing all the placed decorations. Are you sure?")) {
+      this.setState({ decorationsInit: false, decorationsClear: true });
+    }
+  }
+
+  render() {
+    return (
+      <>
+				<h3 className="cpanel-tip">(Drag & Drop)</h3>
+
+				{/*
+				<label className="cpanel-option">
+					<span>Size (WIP)</span>
+					<input
+						min="1"
+						max="4"
+						type="range"
+						value={this.state.decorationsSize}
+						onChange={(e) => this.setState({ decorationsSize: e.target.value })}
+					/>
+				</label>
+				*/}
+
+        <div className="decorations">
+          {decorations.map((item, key) => {
+            return (
+              <Decoration
+                key={key}
+                item={item}
+                id={key}
+								decorationsSize={this.state.decorationsSize}
+                decorationsClear={this.state.decorationsClear}
+                setState={(e) => this.setState(e)}
+              />
+            );
+          })}
+        </div>
+
+        <button
+          class="decorations-clear"
+          disabled={!this.state.decorationsInit}
+          onClick={() => this.decorationsClear()}
+        >
+          Clear
+        </button>
+      </>
+    );
+  }
+}
+
+class TabLights extends Component {
+	lightsClear() {
+		if (confirm("You are removing all the placed lights. Are you sure?")) {
+			this.props.setState({ canvasClear: true });
+		}
+	}
+
+	render() {
+		const props = this.props.props;
+
+		return (
+			<>
+				<h3 className="cpanel-tip">(Draw on the tree)</h3>
+
+				<label className="cpanel-option">
+					<span>Size</span>
+					<input
+						type="range"
+						min="1"
+						max="20"
+						value={props.canvasSize}
+						disabled={props.canvasRandom}
+						onChange={(e) => this.props.setState({ canvasSize: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Color</span>
+					<input
+						type="color"
+						value={props.canvasColor}
+						disabled={props.canvasRandom}
+						onChange={(e) => this.props.setState({ canvasColor: e.target.value })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Random</span>
+					<input
+						type="checkbox"
+						checked={props.canvasRandom}
+						onChange={(e) =>
+							this.props.setState({ canvasRandom: !props.canvasRandom })
+						}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Sync</span>
+					<input
+						type="checkbox"
+						checked={props.canvasSync}
+						onChange={(e) => this.props.setState({ canvasSync: !props.canvasSync })}
+					/>
+				</label>
+
+				<label className="cpanel-option">
+					<span>Speed</span>
+					<input
+						type="range"
+						value={props.canvasSpeed}
+						onChange={(e) => this.props.setState({ canvasSpeed: e.target.value })}
+					/>
+				</label>
+
+				<button onClick={() => this.lightsClear()}>Clear</button>
+
+				{/*
+        // Experimental feature
+        <label className="cpanel-option">
+        <span>Wire</span>
+        <input
+        type="checkbox"
+        checked={props.canvasWire}
+        onChange={(e) => this.props.setState({ canvasWire: !props.canvasWire })}
+        />
+        </label>
+        */}
+			</>
+		);
+	}
+}
+
+class Cpanel extends Component {
+	render() {
+		const props = this.props.props;
+
+		const cpanelMenu = [
+			{
+				menu: "Tree",
+				tab: <TabTree props={props} setState={this.props.setState} />
+			},
+			{
+				menu: "Decorations",
+				tab: <TabDecorations props={props} setState={this.props.setState} />
+			},
+			{
+				menu: "Lights",
+				tab: <TabLights props={props} setState={this.props.setState} />
+			}
+		];
+
+		return (
+			<div className="cpanel">
+				<div className="cpanel-menu">
+					{cpanelMenu.map((item, key) => {
+						return (
+							<a
+								key={key}
+								href={"#" + item.menu}
+								className={"cpanel-link" + (props.menu === item.menu ? " active" : "")}
+								//onClick={() => this.props.setState({ menu: props.menu === item.menu ? undefined : item.menu })}
+								onClick={() => this.props.setState({ menu: item.menu })}
+							>
+								{item.menu}
+							</a>
+						);
+					})}
+				</div>
+
+				{cpanelMenu.map((item) => {
+					return (
+						<div
+							className={"cpanel-tab cpanel-" + item.menu + (props.menu === item.menu ? " active" : "")}
+						>
+							{item.tab}
+						</div>
+					);
+				})}
+			</div>
+		);
+	}
+}
+
+class Tree extends Component {
+	render() {
+		const props = this.props.props;
+		const percent = parseInt(props.treeCurve);
+		const parts = parseInt(props.treeParts);
+		const increment = (100 - percent) / parts;
+		const treeColor =
+			"linear-gradient(" +
+			props.treeColorAngle +
+			"deg, " +
+			props.treeColor1 +
+			", " +
+			props.treeColor2 +
+			")";
+
+		let treeParts = [];
+
+		for (let i = 1; i <= parts; i++) {
+			treeParts.push(
+				<div
+					className="tree-part tree-center"
+					style={{
+						background: treeColor,
+						width: percent + increment * (i + 1) + "%",
+						clipPath:
+							"polygon(" +
+							props.treeAngle +
+							"% 0%, " +
+							(100 - props.treeAngle) +
+							"% 0%, 100% 100%, 0% 100%)"
+					}}
+				></div>
+			);
+		}
+
+		return (
+			<div
+				className="tree-container"
+				style={{background: 
+								"linear-gradient(" +
+									props.bgColorAngle +
+									"deg, " +
+									props.bgColor1 +
+									", " +
+									props.bgColor2 +
+									")" }}
+			>
+				<div
+					className={"tree" + (props.treeShadow ? " shadow" : "")}
+					style={{ width: props.treeWidth, height: props.treeHeight }}
+				>
+					<div
+						className="tree-part tree-top"
+						style={{
+							width: percent + increment + "%",
+							background: treeColor
+						}}
+					></div>
+
+					{treeParts}
+
+					<div
+						className="tree-part tree-bottom"
+						style={{
+							width: props.trunkWidth + "px",
+							height: props.trunkHeight + "px",
+							backgroundColor: props.trunkColor
+						}}
+					></div>
+				</div>
+			</div>
+		);
+	}
+}
+
+class Canvas extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			particles: [],
+			g: {
+				a: 1,
+				m: -1
+			}
+		};
+		this.canvasRef = React.createRef();
+		this.updateAnimationState = this.updateAnimationState.bind(this);
+	}
+
+	componentDidMount() {
+		this.rAF = requestAnimationFrame(this.updateAnimationState);
+		const cache = this;
+		const canvas = cache.canvasRef.current;
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		let isDrawing;
+		canvas.onmousedown = function (e) {
+			isDrawing = true;
+			cache.setParticle(e, true);
+		};
+		canvas.onmousemove = function (e) {
+			if (!isDrawing) return;
+			cache.setParticle(e);
+		};
+		canvas.onmouseup = function () {
+			isDrawing = false;
+		};
+	}
+
+	componentWillUnmount() {
+		cancelAnimationFrame(this.rAF);
+	}
+
+	componentDidUpdate() {
+		if (this.props.props.canvasClear) {
+			this.setState({ particles: [] });
+			const canvas = this.canvasRef.current;
+			const ctx = canvas.getContext("2d");
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			this.props.setState({ canvasClear: false });
+		}
+	}
+
+	hexToRgb(hex) {
+		let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		return result
+			? {
+					r: parseInt(result[1], 16),
+					g: parseInt(result[2], 16),
+					b: parseInt(result[3], 16)
+			  }
+			: null;
+	}
+
+	setParticle(e, first) {
+		const props = this.props.props;
+		if (props.menu === "Lights") {
+			let allowed = true;
+			let particles = this.state.particles;
+			const np = {}; // New Particle
+			np.x = e.clientX;
+			np.y = e.clientY;
+			np.r = props.canvasRandom ? getRandomInt(1, 20) : props.canvasSize;
+
+			const pTotal = particles.length;
+			if (pTotal > 0) {
+				const space = np.r * 5;
+				const lp = particles[pTotal - 1]; // Last Particle in memory
+				if (Math.abs(lp.x - np.x) < space && Math.abs(lp.y - np.y) < space) {
+					allowed = false;
+				}
+			}
+
+			if (allowed || first) {
+				np.c = props.canvasRandom
+					? {
+							r: getRandomInt(0, 255),
+							g: getRandomInt(0, 255),
+							b: getRandomInt(0, 255)
+					  }
+					: this.hexToRgb(props.canvasColor);
+				np.a = 1;
+				np.m = -1;
+				particles.push(np);
+				this.setState({ particles: particles });
+			}
+		}
+	}
+
+	updateAnimationState() {
+		let particlesCurrent = this.state.particles;
+
+		if (particlesCurrent.length > 0) {
+			const props = this.props.props;
+			const speed = props.canvasSpeed / 500;
+			const g = this.state.g;
+
+			if (props.canvasSync) {
+				if (g.a > 0.9) {
+					g.m = -1;
+				} else if (g.a < 0.1) {
+					g.m = 1;
+				}
+				g.a += speed * g.m;
+				this.setState({ g });
+			} else {
+				particlesCurrent.map((p) => {
+					if (p.a > 0.9) {
+						p.m = -1;
+					} else if (p.a < 0.1) {
+						p.m = 1;
+					}
+					p.a += speed * p.m;
+					return p;
+				});
+			}
+
+			this.setState({ particles: particlesCurrent });
+
+			const canvas = this.canvasRef.current;
+			const ctx = canvas.getContext("2d");
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.shadowBlur = 5;
+			ctx.fillStyle = "white";
+
+			/*
+			// Experimental feature
+			if(props.canvasWire){
+				ctx.beginPath();
+				ctx.globalAlpha = 1;
+				ctx.shadowBlur = 0;
+				ctx.lineJoin = ctx.lineCap = 'round';
+				this.state.particles.forEach((p) => {
+					ctx.lineTo(p.x, p.y);
+					ctx.strokeStyle = "#666666";
+					ctx.stroke();
+				});
+			}
+			
+			*/
+
+			this.state.particles.forEach((p) => {
+				const color = "rgba(" + p.c.r + ", " + p.c.g + ", " + p.c.b + ", 0.9)";
+				ctx.beginPath();
+				ctx.globalAlpha = props.canvasSync ? g.a : p.a;
+				ctx.shadowColor = color;
+				ctx.strokeStyle = color;
+				ctx.arc(p.x, p.y, p.r, false, Math.PI * 2, false);
+				ctx.fill();
+				ctx.stroke();
+			});
+		}
+
+		this.rAF = requestAnimationFrame(this.updateAnimationState);
+	}
+
+	render() {
+		return (
+			<canvas
+				className={"canvas" + (this.props.props.menu === "Lights" ? " active" : "")}
+				ref={this.canvasRef}
+			></canvas>
+		);
+	}
+}
+
+class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = defaultValue;
+	}
+
+	render() {
+		return (
+			<>
+				<Tree props={this.state} />
+				<Canvas props={this.state} setState={(e) => this.setState(e)} />
+				<Cpanel props={this.state} setState={(e) => this.setState(e)} />
+			</>
+		);
+	}
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+
+
+
+
+
+js bable
